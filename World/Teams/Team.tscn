@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg53v41yt2ha7"]
+
+[ext_resource type="Script" path="res://World/Teams/Team.gd" id="1_mkv0y"]
+
+[node name="Team" type="Node2D"]
+script = ExtResource("1_mkv0y")

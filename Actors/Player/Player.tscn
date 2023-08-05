@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://ngvqr5vr1wqh"]
+
+[ext_resource type="Script" path="res://Actors/Player/Player.gd" id="1_prqwl"]
+[ext_resource type="PackedScene" uid="uid://dnvk40l03m8yo" path="res://Status/Health.tscn" id="2_1fr5v"]
+[ext_resource type="Texture2D" uid="uid://dku0tam4aoeia" path="res://Assets/TopDownShooter/PNG/Hitman 2/hitman2_hold.png" id="2_t5j5r"]
+[ext_resource type="PackedScene" uid="uid://b3wdxg6fkbtpf" path="res://Weapons/Guns/WeaponGun.tscn" id="3_tuwo8"]
+[ext_resource type="PackedScene" uid="uid://wkhjwukfqcut" path="res://Weapons/Ammo/WeaponAmmo.tscn" id="4_ehmhf"]
+[ext_resource type="PackedScene" uid="uid://bg53v41yt2ha7" path="res://World/Teams/Team.tscn" id="4_ilkrg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5rgdi"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_prqwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5rgdi")
+
+[node name="PlayerSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_t5j5r")
+
+[node name="Health" parent="." instance=ExtResource("2_1fr5v")]
+
+[node name="WeaponGun" parent="." instance=ExtResource("3_tuwo8")]
+position = Vector2(27, 13)
+Ammo = ExtResource("4_ehmhf")
+
+[node name="CameraTransform" type="RemoteTransform2D" parent="."]
+
+[node name="Team" parent="." instance=ExtResource("4_ilkrg")]
+team_name = 1

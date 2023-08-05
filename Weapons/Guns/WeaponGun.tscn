@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3wdxg6fkbtpf"]
+
+[ext_resource type="Script" path="res://Weapons/Guns/WeaponGun.gd" id="1_n2dd5"]
+[ext_resource type="Texture2D" uid="uid://bom7x2hcj68q0" path="res://Assets/TopDownShooter/PNG/weapon_custom_silencer.png" id="2_je010"]
+
+[node name="WeaponGun" type="Node2D"]
+script = ExtResource("1_n2dd5")
+
+[node name="GunSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_je010")
+
+[node name="GunDirection" type="Marker2D" parent="."]
+position = Vector2(20, 0)
+
+[node name="GunEnd" type="Marker2D" parent="."]
+position = Vector2(15, 0)
+
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
